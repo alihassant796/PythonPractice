@@ -1,0 +1,13 @@
+#OOP basics
+class animal:
+    def eat(self):
+        print("animal is eating")
+
+    def sleep(self):
+        print("animal is sleeping")
+
+class lion(animal):
+    pass   
+lion1=lion()
+lion1.eat()
+lion1.sleep()
