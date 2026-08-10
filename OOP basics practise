@@ -11,3 +11,54 @@ class lion(animal):
 lion1=lion()
 lion1.eat()
 lion1.sleep()
+
+#bank account example
+class BankAccount:
+
+    def __init__(self, name, balance):
+        self.name = name
+        self.balance = balance
+
+    def deposit(self, amount):
+        self.balance = self.balance + amount
+
+    def show_balance(self):
+        print("Balance:", self.balance)
+
+
+class SavingsAccount(BankAccount):
+
+    def add_interest(self):
+        self.balance = self.balance + 500
+
+
+#file handling
+#write file
+with open ("student.txt", "w") as file:
+    file.write("alax\n")
+    file.write("naila\n")
+#read file
+with open ("student.txt","r") as file:
+    data = file.read()
+
+    print(data)
+#line by line
+with open ("student.txt","r") as file:
+    for line in file:
+        print(line)
+#readlines
+with open ("student.txt","r") as file:
+    student = file.readlines()
+    print (student)
+#append data
+with open ("student.txt","a") as file:
+    file.write("alax, 20 , coumputer science\n")
+#exception handling
+# try-except
+try:
+    number = int(input("enter a number"))
+except ValueError:
+    print("enter a valid number")   
+finally:
+    print("program finish.")         
+
