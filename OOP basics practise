@@ -54,11 +54,90 @@ with open ("student.txt","r") as file:
 with open ("student.txt","a") as file:
     file.write("alax, 20 , coumputer science\n")
 #exception handling
-# try-except
+# try-except-finally
 try:
     number = int(input("enter a number"))
 except ValueError:
     print("enter a valid number")   
 finally:
-    print("program finish.")         
+    print("program finish.")
 
+#itarator
+num=(20,21,22,23,24)
+itarator= iter(num)
+print(next(itarator))
+print(next(itarator))
+print(next(itarator))
+print(next(itarator))
+print(next(itarator))
+
+#generator
+def evennumber():
+    for number in range(1,20):
+        if number % 2 == 0:
+            yield number
+
+for number in evennumber():
+    print(number)            
+
+
+#decorator  
+def my_decorator(function):
+
+    def wrapper():
+        print("start program")
+
+        function()
+
+        print("finish program")
+    return wrapper    
+@my_decorator
+def hello():
+    print("hello")
+hello()
+
+#args, kwargs
+def my_decorator(function):
+
+    def wrapper(*args, **kwargs):
+        print("start program")
+
+        result = function(*args, *kwargs)
+
+        print("finish program")
+
+        return result
+    return wrapper    
+@my_decorator
+def add(a,b):
+    return a + b
+
+print (add(6,7))
+
+#log execution time
+import time
+def execution_time(function):
+
+    def wrapper(*args, **kwargs):
+
+        start = time.perf_counter()
+
+        result = function(*args, **kwargs)
+
+        end = time.perf_counter()
+
+        print("Execution time:", end - start, "seconds")
+
+        return result
+
+    return wrapper
+@execution_time
+def calculate():
+
+    total = 0
+
+    for i in range(1000000):
+        total += i
+
+    return total
+print (calculate())
