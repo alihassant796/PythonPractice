@@ -1,0 +1,29 @@
+#numpy basics
+import numpy as np 
+array = np.array([1,2,3,4])
+array = array * 2
+print (array)
+print (type(array))
+
+#dtype
+import numpy as np
+array1 = np.array([1.2, 2.2, 3.2, 4.2], dtype=np.int16)
+print (array1)
+print (array.dtype)
+print (f"{array.nbytes}bytes")
+
+#2d array
+import numpy as np
+array2 = np.array ([[["A","B","C"],["D","E","F"],["G","H","I"]],
+                    [["J","K","L"],["M","N","O"],["P","Q","R"]],
+                    [["S","T","U"],["V","W","X"],["Y","Z","-"]]])
+
+word = array2[1,2,2] + array2[0,0,0] + array2[1,1,0] + array2[0,1,1] + array2[0,1,1] + array2[1,1,1]
+
+print (word)
+
+#reshape
+import numpy as np
+array3 = np.array([10,11,12,13,14,15,16,17,18,19,20,21])
+array3= array3.reshape(3,2,2)
+print(array3)
