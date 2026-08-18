@@ -27,3 +27,22 @@ import numpy as np
 array3 = np.array([10,11,12,13,14,15,16,17,18,19,20,21])
 array3= array3.reshape(3,2,2)
 print(array3)
+
+#slicing
+import numpy as np
+array4 = np.array([[1,2,3,4],
+                  [5,6,7,8],
+                  [9,10,11,12]])
+#array[start:end:step]
+print(array4[1,0:2])
+
+#arithmetic
+import numpy as np
+array5 = np.array([1,2,3])
+array6 = np.array([4,5,6])
+
+print(array5 + array6)
+print(array5 - array6)
+print(array5 * array6)
+print(array5 / array6)
+print(array5 ** array6)
