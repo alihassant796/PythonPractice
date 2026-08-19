@@ -46,3 +46,49 @@ print(array5 - array6)
 print(array5 * array6)
 print(array5 / array6)
 print(array5 ** array6)
+
+#broadcasting
+import numpy as np
+array7 = np.array([1,2,3,4,5,6,7,8,9,10])
+array8 = np.array([[1],[2],[3],[4],[5],[6],[7],[8],[9],[10]])
+
+print (array7.shape)
+print (array8.shape)
+print (array7 * array8)
+
+#aggregate function
+import numpy as np
+array9 = np.array([[1,2,3,4,5],
+                   [6,7,8,9,10]])
+
+print(np.sum(array9))
+print(np.mean(array9))
+print(np.std(array9))
+print(np.var(array9))
+print(np.min(array9))
+print(np.max(array9))
+print(np.argmin(array9))
+print(np.argmax(array9))
+#sun the colums
+print(np.sum(array9 , axis = 0))
+#sum the rows
+print(np.sum(array9 , axis = 1))
+
+#filtering
+import numpy as np
+ages = np.array([[15,19,22],
+                 [25,16,23,]])
+
+teenager = ages[ages<18]
+print("teenager = " , teenager)
+adult = np.where(ages>=18, ages , 0)
+print (adult)
+
+#random numbers
+import numpy as np
+#seed is used to save the previous randon number
+rng = np.random.default_rng(seed=2)
+print(rng.integers(low=1, high=100, size=(3,2)))
+
+#random floating numbers
+print(np.random.uniform(low=-1,high=1,size=3))
