@@ -1,0 +1,54 @@
+#series
+import pandas as pd 
+data = [100,101,102,103]
+series = pd.Series(data, index=["a","b","c","d"])
+#change a number
+series.loc["c"] = 69
+print(series)
+#print specific row
+print(series.loc["b"])
+#to print integer value
+print(series.iloc[1])
+
+#data frames
+import pandas as pd
+employee = {"name":["henlay", "bob", "mark"],
+            "age":[25,32,28]}
+df = pd.DataFrame(employee, index=["ep1","ep2","ep3"])
+#add a new coloumn
+df["job"] = ["cook","N/A","cashier"]
+#add a new row
+#first will add a new data frame
+new_row = pd.DataFrame([{"name": "jones", "age": "22", "job": "engineer"}], index=["ep4"])
+#now we will concatinate both data frames
+df = pd.concat([df,new_row]) 
+print(df)
+
+#import file
+import pandas as pd
+df1= pd.read_csv("datapokemonrandom.csv")
+print (df1)
+#to print all
+print(df1.to_string())
+#SELECTION by cloumn
+print(df1["Name"])
+#selection by rows
+print(df1.loc[2])
+#FILTERING
+tall_pokemon = df1[df1["Height"] >= 2 ]
+print(tall_pokemon)
+water_pokemon = df1[(df1["Type1"] == "Water") |
+                    (df1["Type2"] == "Water")]
+print(water_pokemon)
+#AGGREGATE FUNCTION
+print(df1.mean(numeric_only = True))
+print(df1.sum(numeric_only = True))
+print(df1.min(numeric_only = True))
+print(df1.count())
+#GROUPBY
+group = df1.groupby("Type1")
+print(group["Height"].mean())
+#DATE CLEANING
+#drop irrelevent cloumn
+df1 = df1.drop(columns=["Legendary", "No"])
+print(df1)
