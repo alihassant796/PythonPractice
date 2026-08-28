@@ -1,0 +1,39 @@
+import matplotlib.pyplot as plt 
+import numpy as np
+
+x = np.array([2023,2024,2025,2026])
+y = np.array([25,30,28,35])
+#grid lines
+plt.grid(axis="both", linewidth="2")
+plt.plot(x,y)
+plt.show()
+
+#bar chart
+import matplotlib.pyplot as plt 
+categories = ["football","cricket","badminton","vollyball"]
+players = [50,43, 20, 12]
+
+plt.bar(categories,players)
+plt.title("Sports Fest")
+plt.xlabel("Games")
+plt.ylabel("no.of players")
+plt.show()
+
+#scatter plot
+import matplotlib.pyplot as plt
+import numpy as np
+
+x2 = np.array([1,2,3,4,5,6,7,8,8])
+y2 = np.array([22,34,55,65,45,78,66,98,69])
+
+x3 = np.array([0,1,2,3,4,4,5,6,7,])
+y3 = np.array([22,46,47.67,79,82,84,96,78])
+
+plt.scatter(x2,y2)
+plt.scatter(x3,y3)
+plt.title("test scores")
+plt.xlabel("studied hours")
+plt.ylabel("grade")
+plt.show()
+
+
