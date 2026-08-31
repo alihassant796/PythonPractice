@@ -1,0 +1,27 @@
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+titanic = sns.load_dataset("titanic")
+
+print(titanic)
+#Distribution
+#hue Separate the graph according to the given column.
+sns.histplot(data=titanic, x="age", hue="sex")
+plt.show()
+
+#Heatmap
+numeric_data = titanic[["survived", "pclass", "age", "sibsp", "parch", "fare"]]
+
+correlation = numeric_data.corr()
+
+print(correlation)
+sns.heatmap(correlation, annot=True)
+plt.show()
+
+#pairplot
+sns.pairplot(
+    titanic[["survived", "pclass", "age", "fare", "sex"]],
+    hue="sex"
+)
+
+plt.show()
